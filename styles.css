@@ -1,6 +1,6 @@
 .home {
     height: 300px;
-    border: 15px solid;
+    border: 20px solid;
 
     display: flex;
     justify-content: space-evenly;
@@ -12,9 +12,23 @@
 
 .block {
     text-align: center;
+    height: 75px;
+}
+
+.cell-y {
+    padding: auto;
+    margin: auto;
     height: 50px;
 }
 
-.cell {
-    height: 50px;
+.cell-x {
+    padding: auto;
+    margin: auto;
+    width: 50px;
+    height: 35px;
+}
+
+.cellZ {
+    padding: auto;
+    margin: auto;
 }
