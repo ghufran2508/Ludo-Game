@@ -1,17 +1,16 @@
 .home {
     height: 300px;
-    border: 20px solid;
+    border: 25px solid;
 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    padding: auto;
+    padding: 5%;
     margin: auto;
 }
 
 .block {
-    text-align: center;
     height: 75px;
 }
 
