@@ -12,22 +12,30 @@
     <title>LUDO</title>
 </head>
 <body>
-    
+    <script>startGame()</script>
     <div class="container">
 
         <div class="row">
             <div class="col-5">
                 <div class="row home border-danger">
-                    <div class="block col-5 border-danger" onclick="Hello()">  </div>
-                    <div class="block col-5 border-danger">  </div>
-                    <div class="block col-5 border-danger">  </div>
-                    <div class="block col-5 border-danger">  </div>
+
+                    <div class="block col-5 border-danger"> 
+                        <div id="red1" class="pawn bg-danger"
+                    onclick="Hello(this.id)"></div> </div>
+
+                    <div class="block col-5 border-danger"
+                    id="red2"> <div class="pawn bg-danger"></div> </div>
+                    <div class="block col-5 border-danger"
+                    id="red3"> <div class="pawn bg-danger"></div> </div>
+                    <div class="block col-5 border-danger"
+                    id="red4"> <div class="pawn bg-danger"></div> </div>
                 </div>
             </div>
 
             <div class="col-2">
                 <div class="row">
-                    <div class="cell-y col-4 border border-dark"> </div>
+                    <div class="cell-y col-4 border border-dark"
+                    id="temp"> </div>
                     <div class="cell-y col-4 border border-dark"> </div>
                     <div class="cell-y col-4 border border-dark"> </div>
 
@@ -64,7 +72,7 @@
         </div>
 
         <div class="row">
-            <div class="col-5">
+            <div class="col-5 cells_x">
                 <div class="row">
                     <div class="cell-x col-2 border border-dark"> </div>
                     <div class="cell-x col-2 border border-dark bg-danger"> </div>
@@ -100,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="col-5">    
+            <div class="col-5 cells_y">    
                 <div class="row">
                     <div class="cell-x col-2 border border-dark"> </div>
                     <div class="cell-x col-2 border border-dark"> </div>
@@ -166,10 +174,16 @@
             </div>
             <div class="col-5">
                 <div class="row home border-info">
-                    <div class="block col-5 border-info"> </div>
-                    <div class="block col-5 border-info"> </div>
-                    <div class="block col-5 border-info"> </div>
-                    <div class="block col-5 border-info"> </div>
+                    <div class="block col-5 border-info">
+                        <div class="pawn bg-info"></div> </div>
+                    <div class="block col-5 border-info">
+                        <div class="pawn bg-info"></div> </div>
+                    <div class="block col-5 border-info"> 
+                        <div class="pawn bg-info"></div> 
+                    </div>
+                    <div class="block col-5 border-info"> 
+                        <div class="pawn bg-info"></div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,35 @@
+@media screen and (min-width: 1080px) {
+    .home {
+      height: 350px;
+    }
+    .cells_x {
+        padding-left: 2%;
+    }
+    .cells_y {
+        padding-right: 2%;
+    }
+    .cell-y {
+        height: 58px;
+    }
+  }
+
+
+  @media screen and (max-width: 1080px) {
+    .home {
+        height: 300px;
+      }
+    .cells_x {
+        padding-left: 3.5%;
+    }
+    .cells_y {
+        padding-right: 3.5%;
+    }
+    .cell-y {
+        height: 50px;
+    }
+  }
+
 .home {
-    height: 300px;
     border: 25px solid;
 
     display: flex;
@@ -11,26 +41,22 @@
 }
 
 .block {
+    display: flex;
     height: 75px;
     border-radius: 50%;
     border: 10px solid;
+    align-items: center;
+    justify-content: center;
 }
 
-.cell-y {
-    padding: auto;
-    margin: auto;
-    height: 50px;
+.pawn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }
 
 .cell-x {
-    padding: auto;
-    margin: auto;
     height: 40px;
-}
-
-.cellZ {
-    padding: auto;
-    margin: auto;
 }
 
 .safe {

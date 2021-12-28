@@ -1,5 +1,9 @@
-function Hello() {
-    alert('Hello');
+function Hello(id) {
+    alert(id);
+}
+
+function startGame() {
+    // document.getElementById('red1').
 }
 
 const totalPlayers = 2;
