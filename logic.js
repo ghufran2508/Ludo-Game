@@ -63,7 +63,7 @@ function MovePawn(id) {
         position = othersHome(position);
 
         let hposition = myHome(position);
-        if(hposition == position && house == true) {
+        if(hposition < position && house == true) {
             position = hposition;
 
             if(diceNumber != 6) {
