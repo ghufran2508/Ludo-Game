@@ -12,6 +12,8 @@
 
 .block {
     height: 75px;
+    border-radius: 50%;
+    border: 10px solid;
 }
 
 .cell-y {
@@ -23,7 +25,7 @@
 .cell-x {
     padding: auto;
     margin: auto;
-    height: 35px;
+    height: 40px;
 }
 
 .cellZ {
@@ -39,8 +41,9 @@
 
 .Mid-home {
     height: 105px;
-    border-left: 25px solid #e53935;
-    border-top: 25px solid #fff176;
-    border-bottom: 25px solid #66bb6a;
-    border-right: 25px    solid #29b6f6;
+    text-align: center;
+}
+
+.midHomeImg {
+    height: 85px;
 }
