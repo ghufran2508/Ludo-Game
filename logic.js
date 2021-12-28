@@ -1,6 +1,6 @@
 function Hello(id) {
     var copyThis = document.getElementById(id).parentElement;
-    var copied = document.getElementById('temp');
+    var copied = document.getElementById('cell_19');
 
     copied.innerHTML = copyThis.innerHTML;
     copyThis.innerHTML = "";
@@ -13,6 +13,7 @@ function startGame() {
 const totalPlayers = 2;
 const PlayerColors = ["Red","Blue"];
 var currentTurn = 0;
+const safeStates = document.getElementById('safe');
 
 function randomNumber() {
     let randomNum = Math.floor(Math.random()*6)+1;

@@ -34,37 +34,31 @@ body {
 }
 
 .block {
-    display: flex;
     height: 75px;
     border-radius: 50%;
     border: 10px solid;
+}
+
+.pawn {
+    height: 0;
+    width: 40px;
+    border-bottom: 40px solid #081729;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.cell-x {
+    height: 40px;
+}
+
+.block, .cell-x, .cell-y {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.pawn {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-
-.cell-x {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    height: 40px;
-}
-
-.cell-y {
-    display: flex;
-    text-align: center;
-    align-items: center;
-}
-
 .safe {
-    background-color: #0c0b0b38;
+    background-color: #11030338;
     -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     
@@ -77,5 +71,4 @@ body {
 
 .midHomeImg {
     height: 85px;
-}
-
+} 
