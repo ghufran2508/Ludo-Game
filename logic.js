@@ -1,5 +1,9 @@
 function Hello(id) {
-    alert(id);
+    var copyThis = document.getElementById(id).parentElement;
+    var copied = document.getElementById('temp');
+
+    copied.innerHTML = copyThis.innerHTML;
+    copyThis.innerHTML = "";
 }
 
 function startGame() {
