@@ -7,8 +7,8 @@ var RedHouse = false;
 var BlueHouse = false;
 var currentTurn = 0;
 const safeStates = document.getElementById('safe');
-const RedStart = 6;
-const BlueStart = 45;
+const RedStart = RedHome[0];
+const BlueStart = BlueHome[0];
 var diceNumber = -1;
 
 function randomNumber() {
