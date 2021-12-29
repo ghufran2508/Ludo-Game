@@ -35,7 +35,9 @@ function MovePawn(id) {
     if(id[0] == 'r' && currentTurn == 1) return;
     if(id[0] == 'b' && currentTurn == 0) return;
 
-    var copyThis = document.getElementById(id).parentElement;
+    var thisParent = document.getElementById(id).parentElement;
+    var thisDiv = document.getElementById(id);
+
     let start = 0;
     let house = false;
 
@@ -48,17 +50,17 @@ function MovePawn(id) {
         house = BlueHouse;
     }
 
-    if(copyThis.classList.contains('block')) {
+    if(thisParent.classList.contains('block')) {
         if(diceNumber == 6) {
             PlayerStatus[currentTurn] = true;
             let copiedTo = document.getElementById('cell_'+start);
-            copiedTo.innerHTML = copyThis.innerHTML;
-            copyThis.innerHTML = "";
+            copiedTo.append(thisDiv);
+
         }
     }
     else {
         //checks here!!!
-        let position = parseInt(copyThis.id.split("_")[1]);
+        let position = parseInt(thisParent.id.split("_")[1]);
         position += diceNumber;
         position = othersHome(position);
 
@@ -78,8 +80,27 @@ function MovePawn(id) {
 
 
         let copiedTo = document.getElementById('cell_'+position);
-        copiedTo.innerHTML = copyThis.innerHTML;
-        copyThis.innerHTML = "";
+        console.log(copiedTo.classList);
+
+        if(copiedTo.childElementCount > 0) {
+            let alsoSafe = asloSafe(copiedTo.id);
+            if(alsoSafe == false && copiedTo.classList[4] != "safe") {
+                for(let i = 0; i < copiedTo.childElementCount; i++) {
+                    if(copiedTo.children[i].id[0] == 'b' && id[0] == 'r') {
+                        let toDetele = copiedTo.children[i];
+                        
+                        document.getElementById(toDetele.id[0].toUpperCase()+id[id.length-1]).append(toDetele);
+                    }
+                    else if(copiedTo.children[i].id[0] == 'r' && id[0] == 'b') {
+                        let toDetele = copiedTo.children[i];
+    
+                        document.getElementById(toDetele.id[0].toUpperCase()+id[id.length-1]).append(toDetele);
+                    }
+                }   
+            }
+        }
+
+        copiedTo.append(thisDiv);
     }
 
     if(diceNumber != 6) {
@@ -169,4 +190,16 @@ function removePawns() {
         
         parent.innerHTML = "";
     }
+}
+
+function asloSafe(cell_pos) {
+    let gs = "cell_"+"1";
+    let rs = "cell_"+"19";
+    let ys = "cell_"+"37";
+    let bs = "cell_"+"55";
+
+    if(cell_pos == gs || cell_pos == rs || cell_pos == ys || cell_pos == bs) {
+        return true;
+    }
+    return false;
 }
