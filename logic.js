@@ -7,8 +7,8 @@ var RedHouse = false;
 var BlueHouse = false;
 var currentTurn = 0;
 const safeStates = document.getElementById('safe');
-const RedStart = 1;
-const BlueStart = 37;
+const RedStart = 6;
+const BlueStart = 45;
 var diceNumber = -1;
 
 function randomNumber() {
@@ -125,6 +125,8 @@ function othersHome(position) {
 function myHome(position) {
     if(currentTurn == 0) {
         if(position == RedHome[0]-1) {
+            
+            removePawns();
             alert('RED WINS');
         }
         else if(position >= RedHome[1] && position <= RedHome[5]) {
@@ -140,6 +142,8 @@ function myHome(position) {
     }
     else if(currentTurn == 1) {
         if(position == BlueHome[0]-1) {
+            
+            removePawns();
             alert('BLUE WINS');
         }
         else if(position >= BlueHome[1] && position <= BlueHome[5]) {
@@ -152,5 +156,17 @@ function myHome(position) {
             }
         }
         return position;
+    }
+}
+
+function removePawns() {
+    let allPawns = document.getElementsByClassName('pawn');
+
+    let size = allPawns.length;
+    for(let i = 0; i < size; i++) {
+        let parent = allPawns[0].parentElement;
+
+        
+        parent.innerHTML = "";
     }
 }
