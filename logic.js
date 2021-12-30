@@ -19,15 +19,11 @@ var currentTurn = 0;
 
 //const safeStates = document.getElementById('safe');
 
-// const RedStart = RedHome[0];
-// const BlueStart = BlueHome[0];
+const RedStart = RedHome[0];
+const BlueStart = BlueHome[0];
 //store random dice number
 var diceNumber = -1;
 var pawnsFinished = [0,0];
-
-const RedStart = 6;
-const BlueStart = 41;
-
 
 
 //check if player is stuck 
@@ -44,6 +40,9 @@ function isStuck() {
                 if(diceNumber + cellNum <= RedHome[0]-1) {
                     return false;
                 }
+                if(cellNum < RedHome[1] || cellNum > RedHome[5]) {
+                    return false;
+                }
             }
         }
         return true;
@@ -58,6 +57,9 @@ function isStuck() {
                 let cellNum = parseInt(cell.id.split("_")[1]);
                 console.log(cellNum);
                 if(diceNumber + cellNum <= BlueHome[0]-1) {
+                    return false;
+                }
+                if(cellNum < BlueHome[1] || cellNum > BlueHome[5]) {
                     return false;
                 }
             }
@@ -219,6 +221,15 @@ function othersHome(position) {
         else if(position >= 67 && position <= 71) {
             position+=5;
         }
+        if(position == 36 && diceNumber == 6) {
+            position+=5;
+        }
+        else if(position == 54 && diceNumber == 6) {
+            position +=5;
+        }
+        else if(position == 72 && diceNumber == 6) {
+            position += 5;
+        }
     }
     else if(currentTurn == 1) {
         if(position >= 31 && position <= 35) {
@@ -229,6 +240,15 @@ function othersHome(position) {
         }
         else if(position >= 67 && position <= 71) {
             position+=5;
+        }
+        if(position == 72 && diceNumber == 6) {
+            position +=5;
+        }
+        else if(position == 18 && diceNumber == 6) {
+            position +=5;
+        }
+        else if(position == 36 && diceNumber == 6) {
+            position += 5;
         }
     }
 
@@ -267,13 +287,16 @@ function myHome(position, id_num) {
     }
     else if(currentTurn == 1) {
         if(position == BlueHome[0]-1) {
-            pawnsFinished[1]++;
-
+            
+            pawnsFinished[0]++;
             let num = parseInt(id_num)+1;
-            var parent = document.getElementById('blue_'+num).parentElement;
-            parent.removeChild(document.getElementById('blue_'+num));
-            BlueHouse[id_num] = false;
-            changeAliveStatus(1);
+
+            let parent = document.getElementById("blue_"+num).parentElement;
+            let thisPawn = document.getElementById("blue_"+num);
+            RedHouse[id_num] =false;
+            changeAliveStatus(0);
+
+            parent.removeChild(thisPawn);
 
             WIN("b");
         }
