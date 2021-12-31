@@ -33,25 +33,16 @@ body {
 
 }
 
-.block {
-    height: 75px;
-    border-radius: 50%;
-    border: 10px solid;
-}
-
 .pawn {
-    height: 0;
-    width: 40px;
-    border-bottom: 40px solid #081729;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
+    border-radius: 50%;
+    border: 15px solid black;
 }
 
 .cell-x {
     height: 40px;
 }
 
-.block, .cell-x, .cell-y {
+.cell-x, .cell-y {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,3 +63,24 @@ body {
 .midHomeImg {
     height: 85px;
 } 
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    overflow: hidden;
+    width: 40%;
+    height: 40%;
+
+    background: white;
+  }
+
+.tl, .tr, .bl, .br {
+    flex: 50%;
+
+
+    /* background:red; */
+}
