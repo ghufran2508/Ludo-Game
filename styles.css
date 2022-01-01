@@ -6,6 +6,9 @@
     .cell-y {
         height: 60px;
     }
+    .pawn {
+        border: 15px solid transparent;
+    }
   }
 
 
@@ -16,6 +19,9 @@
     
     .cell-y {
         height: 50px;
+    }
+    .pawn {
+        border: 12px solid transparent
     }
   }
 
@@ -35,7 +41,7 @@ body {
 
 .pawn {
     border-radius: 50%;
-    border: 15px solid transparent;
+    /* border: 15px solid transparent; */
 }
 
 .pawn1 {
@@ -81,6 +87,12 @@ body {
 .midHomeImg {
     height: 85px;
 } 
+
+.block {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
 
 .square {
     display: flex;
